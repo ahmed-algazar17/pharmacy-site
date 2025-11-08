@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DR / ESRAA ELALFY PHARMACY</title>
+    <link rel="icon" href="images/logo2.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <div class="cart">
+        <div class="top_cart">
+            <h3>Cart Items : <span class="Count_item_cart">0</span></h3>
+            <span onclick="open_close_cart()" class="close_cart"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_cart" id="cart_items">
+
+
+
+        </div>
+
+
+        <div class="bottom_cart">
+            <div class="total">
+                <p>subtotal</p>
+                <p class="price_cart_total">50EG</p>
+            </div>
+            <div class="bottom_cart">
+                <a href="#" class="btn_cart btn">Checkout</a>
+                <span onclick="open_close_cart()" class="btn_cart trans_bg btn">Shop More</span>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!--favorite-->
+    <div class="favorite">
+        <div class="top_favorite">
+            <h3>Favorite Items : <span class="Count_item_favorite">0</span></h3>
+            <span onclick="open_close_favorite()" class="close_favorite"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_favorite" id="favorite_items">
+           
+        </div>
+    </div>
+    <!--HEADER-->
+    <div class="header">
+        <div> <img class="logo" src="images/file_00000000d7d861f48d124e8eb4435ce9.png" /></div>
+        <div class="header-middle-section">
+            <h1 style="color: white; font-size:50px; margin-bottom: 30px;">DR / ESRAA EL-ALFY PHARAMACY</h1>
+            <span style="font-size: 25px;">WELCOME TO OUR PHARAMACY</span>
+            <h3>YOUR BEST MEDICAL CONSULT</h3>
+
+        </div>
+        <div class="header-icons">
+            <div class="icon-box">
+                <a href="index.html">
+                    <i class="fa-solid fa-house fa-2xl"></i>
+                </a>
+            </div>
+            <div onclick="open_close_favorite()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-heart fa-2xl"></i>
+                    <span class="count count-header-favorite">0</span>
+                </a>
+            </div>
+            <div onclick="open_close_cart()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                    <span class="count count-item-header">0</span>
+                </a>
+            </div>
+            <div>
+                <button class="header-links-button">Login <i class="fa-solid fa-right-to-bracket"></i></button>
+                <button class="header-links-button">sign up <i class="fa-solid fa-user-plus"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="contact-intro">
+                We’d love to hear from you! Whether you have a question about our products, services, or anything else — our team is ready to answer all your inquiries.
+            </p>
+
+            <div class="contact-content">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> Mansoura, Egypt</p>
+                    <p><i class="fa-solid fa-phone"></i> +20 1028491544</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@esraa-pharmacy.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-solid fa-phone"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form class="contact-form">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <textarea rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+            <!-- Google Map -->
+<div class="contact-map">
+    <h3>Find Us Here</h3>
+    <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110425.1915580244!2d31.326015099999996!3d31.041859149999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f79df6b1a60c27%3A0x53b03cb73d91b2a!2sXH27%2BPW%20Tamy%20Al%20Amdid%2C%20Dakahlia%20Governorate%2C%20Egypt!5e0!3m2!1sen!2seg!4v1709492180332!5m2!1sen!2seg"
+        width="100%" 
+        height="350" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="big_row">
+                <img class="logo_footer" src="images/logo_footer-removebg-preview.png" alt="">
+
+                <p>Healing is from Allah, care is from us — DR / ESRAA ELALFY PHARMACY © 2025</p>
+
+                <div class="icons_footer">
+                    <a href="#"><i class="fa-solid fa-phone"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+
+                </div>
+            </div>
+
+
+            <div class="row">
+                <H4>Find It Fast</H4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>LOCAL DRUGS </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>COSMOTICS </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>HAIR CARE </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>SKIN CARE </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>IMPORTED DRUGS </a>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <H4>Quick Links</H4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Your Account </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Return & Exchange</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Shipping & Delivery</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Estimated Delivery <Time></Time> </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Purchase History </a>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <H4>Service us</H4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Support Center</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Terms & Conditions</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Privacy Policy</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Help</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>FAQs</a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="bottom_footer">
+            <div class="container">
+                <p>&copy; <span>DR / ESRAA EL-ALFY PHARAMACY.</span>AlL Rights Reserved.</p>
+
+                <div class="payment_img">
+                    <img src="images/payment methods.png" alt="">
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+        <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--file JS-->
+    <script src="js/swiper.js" defer></script>
+    <script src="js/items_home.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+
+</body>
+</html>

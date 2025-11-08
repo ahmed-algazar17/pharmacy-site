@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DR / ESRAA ELALFY PHARMACY - Products</title>
+    <link rel="icon" href="images/logo2.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Swiper + FontAwesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product.css">
+</head>
+
+<body>
+
+    <!-- 🛒 CART -->
+    <div class="cart">
+        <div class="top_cart">
+            <h3>Cart Items : <span class="Count_item_cart">0</span></h3>
+            <span onclick="open_close_cart()" class="close_cart">
+                <i class="fa-regular fa-circle-xmark"></i>
+            </span>
+        </div>
+        <div class="items_in_cart" id="cart_items"></div>
+        <div class="bottom_cart">
+            <div class="total">
+                <p>Subtotal</p>
+                <p class="price_cart_total">50EG</p>
+            </div>
+            <div class="bottom_cart">
+                <a href="#" class="btn_cart btn">Checkout</a>
+                <span onclick="open_close_cart()" class="btn_cart trans_bg btn">Shop More</span>
+            </div>
+        </div>
+    </div>
+
+    <!--favorite-->
+    <div class="favorite">
+        <div class="top_favorite">
+            <h3>Favorite Items : <span class="Count_item_favorite">0</span></h3>
+            <span onclick="open_close_favorite()" class="close_favorite"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_favorite" id="favorite_items">
+           
+        </div>
+    </div>
+    <!-- 🧾 HEADER -->
+    <div class="header">
+        <div>
+            <img class="logo" src="images/file_00000000d7d861f48d124e8eb4435ce9.png" />
+        </div>
+        <div class="header-middle-section">
+            <h1 style="color: white; font-size:50px; margin-bottom: 30px;">DR / ESRAA EL-ALFY PHARMACY</h1>
+            <span style="font-size: 25px;">WELCOME TO OUR PHARMACY</span>
+            <h3>YOUR BEST MEDICAL CONSULT</h3>
+        </div>
+        <div class="header-icons">
+            <div class="icon-box">
+                <a href="index.html">
+                    <i class="fa-solid fa-house fa-2xl"></i>
+                </a>
+            </div>
+            <div onclick="open_close_favorite()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-heart fa-2xl"></i>
+                    <span class="count count-header-favorite">0</span>
+                </a>
+            </div>
+            <div onclick="open_close_cart()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                    <span class="count count-item-header">0</span>
+                </a>
+            </div>
+            <div>
+                <button class="header-links-button">Login <i class="fa-solid fa-right-to-bracket"></i></button>
+                <button class="header-links-button">Sign up <i class="fa-solid fa-user-plus"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔍 FILTER BAR -->
+    <section class="filter-section">
+        <div class="container">
+            <input type="text" placeholder="Search for products..." class="filter-search">
+            <select class="filter-category">
+                <option value="all">All Categories</option>
+                <option value="drugs">Drugs</option>
+                <option value="cosmetics">Cosmetics</option>
+                <option value="skincare">Skin Care</option>
+                <option value="baby">Baby Care</option>
+            </select>
+            <select class="filter-sort">
+                <option value="default">Sort By</option>
+                <option value="price_low">Price: Low → High</option>
+                <option value="price_high">Price: High → Low</option>
+                <option value="name">Name A-Z</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- 💊 PRODUCTS GRID -->
+    <section class="product-grid">
+        <div class="container">
+
+            <div class=" product">
+                <!-- <span class="sale_present">50%</span> -->
+                <div class="img_product">
+                    <a href="#"><img src="images/drugs/asprin.protect.png" alt=""></a>
+                </div>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="name_product"><a href="#">Aspirin Protect 100mg</a></p>
+
+                <div class="price">
+                    <p><span>36 EG</span></p>
+                    <p class="old_price">tablet</p>
+                </div>
+                <div class="icon">
+                    <span class="btn_add_cart">
+                        <i class="fa-solid fa-cart-shopping"></i>add to cart</span>
+                    <span class="icon_product">
+                        <i class="fa-regular fa-heart"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class=" product">
+                <!-- <span class="sale_present">50%</span> -->
+                <div class="img_product">
+                    <a href="#"><img src="images/drugs/asprin.protect.png" alt=""></a>
+                </div>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="name_product"><a href="#">Aspirin Protect 100mg</a></p>
+
+                <div class="price">
+                    <p><span>36 EG</span></p>
+                    <p class="old_price">tablet</p>
+                </div>
+                <div class="icon">
+                    <span class="btn_add_cart">
+                        <i class="fa-solid fa-cart-shopping"></i>add to cart</span>
+                    <span class="icon_product">
+                        <i class="fa-regular fa-heart"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class=" product">
+                <!-- <span class="sale_present">50%</span> -->
+                <div class="img_product">
+                    <a href="#"><img src="images/drugs/asprin.protect.png" alt=""></a>
+                </div>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="name_product"><a href="#">Aspirin Protect 100mg</a></p>
+
+                <div class="price">
+                    <p><span>36 EG</span></p>
+                    <p class="old_price">tablet</p>
+                </div>
+                <div class="icon">
+                    <span class="btn_add_cart">
+                        <i class="fa-solid fa-cart-shopping"></i>add to cart</span>
+                    <span class="icon_product">
+                        <i class="fa-regular fa-heart"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class=" product">
+                <!-- <span class="sale_present">50%</span> -->
+                <div class="img_product">
+                    <a href="#"><img src="images/drugs/asprin.protect.png" alt=""></a>
+                </div>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="name_product"><a href="#">Aspirin Protect 100mg</a></p>
+
+                <div class="price">
+                    <p><span>36 EG</span></p>
+                    <p class="old_price">tablet</p>
+                </div>
+                <div class="icon">
+                    <span class="btn_add_cart">
+                        <i class="fa-solid fa-cart-shopping"></i>add to cart</span>
+                    <span class="icon_product">
+                        <i class="fa-regular fa-heart"></i>
+                    </span>
+                </div>
+            </div>
+            
+            <div class=" product">
+                <!-- <span class="sale_present">50%</span> -->
+                <div class="img_product">
+                    <a href="#"><img src="images/drugs/asprin.protect.png" alt=""></a>
+                </div>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="name_product"><a href="#">Aspirin Protect 100mg</a></p>
+
+                <div class="price">
+                    <p><span>36 EG</span></p>
+                    <p class="old_price">tablet</p>
+                </div>
+                <div class="icon">
+                    <span class="btn_add_cart">
+                        <i class="fa-solid fa-cart-shopping"></i>add to cart</span>
+                    <span class="icon_product">
+                        <i class="fa-regular fa-heart"></i>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ⚪ FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="big_row">
+                <img class="logo_footer" src="images/logo_footer-removebg-preview.png" alt="">
+
+                <p>Healing is from Allah, care is from us — DR / ESRAA ELALFY PHARMACY © 2025</p>
+
+                <div class="icons_footer">
+                    <a href="#"><i class="fa-solid fa-phone"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+
+                </div>
+            </div>
+
+
+            <div class="row">
+                <H4>Find It Fast</H4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>LOCAL DRUGS </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>COSMOTICS </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>HAIR CARE </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>SKIN CARE </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>IMPORTED DRUGS </a>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <H4>Quick Links</H4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Your Account </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Return & Exchange</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Shipping & Delivery</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Estimated Delivery <Time></Time> </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Purchase History </a>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <H4>Service us</H4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Support Center</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Terms & Conditions</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Privacy Policy</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Help</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>FAQs</a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="bottom_footer">
+            <div class="container">
+                <p>&copy; <span>DR / ESRAA EL-ALFY PHARAMACY.</span>AlL Rights Reserved.</p>
+
+                <div class="payment_img">
+                    <img src="images/payment methods.png" alt="">
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--file JS-->
+    <script src="js/swiper.js" defer></script>
+    <script src="js/items_home.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+
+</body>
+
+</html>

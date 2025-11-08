@@ -40,7 +40,7 @@ fetch('items_home.json')
                             <span class="btn_add_cart ${isInCart ? 'active' : ''}" data-id="${product.id}">
                                 <i class="fa-solid fa-cart-shopping"></i>${isInCart ? 'Item In Cart' : 'add to cart'}
                             </span>
-                            <span class="icon_product">
+                            <span class="icon_product ${isInCart ? 'active' : ''}" data-id="${product.id}">
                                 <i class="fa-regular fa-heart"></i>
                             </span>
                         </div>
@@ -82,7 +82,7 @@ fetch('items_home.json')
                             <span class="btn_add_cart ${isInCart ? 'active' : ''}" data-id="${product.id}">
                                 <i class="fa-solid fa-cart-shopping"></i>${isInCart ? 'Item In Cart' : 'add to cart'}
                             </span>
-                            <span class="icon_product">
+                            <span class="icon_product ${isInCart ? 'active' : ''}" data-id="${product.id}">
                                 <i class="fa-regular fa-heart"></i>
                             </span>
                         </div>

@@ -13,19 +13,15 @@
 </head>
 
 <body>
-
+    <!--cart-->
     <div class="cart">
         <div class="top_cart">
             <h3>Cart Items : <span class="Count_item_cart">0</span></h3>
             <span onclick="open_close_cart()" class="close_cart"> <i class="fa-regular fa-circle-xmark"></i></span>
         </div>
         <div class="items_in_cart" id="cart_items">
-
-
-
+            
         </div>
-
-
         <div class="bottom_cart">
             <div class="total">
                 <p>subtotal</p>
@@ -39,7 +35,16 @@
 
         </div>
     </div>
-
+    <!--favorite-->
+    <div class="favorite">
+        <div class="top_favorite">
+            <h3>Favorite Items : <span class="Count_item_favorite">0</span></h3>
+            <span onclick="open_close_favorite()" class="close_favorite"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_favorite" id="favorite_items">
+           
+        </div>
+    </div>
 
     <!--HEADER-->
     <div class="header">
@@ -51,10 +56,10 @@
 
         </div>
         <div class="header-icons">
-            <div class="icon-box">
+            <div onclick="open_close_favorite()" class="icon-box">
                 <a>
                     <i class="fa-solid fa-heart fa-2xl"></i>
-                    <span class="count count-favorite">0</span>
+                    <span class="count count-header-favorite">0</span>
                 </a>
             </div>
             <div onclick="open_close_cart()" class="icon-box">
@@ -91,10 +96,10 @@
 
             <div class="landing-page-middle-section-btn ">
 
-                <a href="DR_ESRAA EL_ALFY PHARMACY.html">HOME</a>
-                <a href="#">PRODUCT</a>
-                <a href="#">CONTACT</a>
-                <a href="#">ABOUT</a>
+                <a href="index.html">HOME</a>
+                <a href="product.html">PRODUCT</a>
+                <a href="contact.html">CONTACT</a>
+                <a href="about.html">ABOUT</a>
             </div>
         </div>
         <div class="landing-page-search">
