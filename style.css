@@ -71,6 +71,7 @@ img {
     background-color: #0b12e5;
     color: white;
     border-radius: 15px;
+    text-decoration: none;
     padding: 15px 25px;
     border: none;
     cursor: pointer;

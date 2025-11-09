@@ -28,7 +28,7 @@
                 <p class="price_cart_total">50EG</p>
             </div>
             <div class="bottom_cart">
-                <a href="#" class="btn_cart btn">Checkout</a>
+                <a href="checkout.html" class="btn_cart btn">Checkout</a>
                 <span onclick="open_close_cart()" class="btn_cart trans_bg btn">Shop More</span>
             </div>
 
@@ -69,8 +69,8 @@
                 </a>
             </div>
             <div>
-                <button class="header-links-button">Login <i class="fa-solid fa-right-to-bracket"></i></button>
-                <button class="header-links-button">sign up <i class="fa-solid fa-user-plus"></i></button>
+                <a href="login.html" class="header-links-button ">Log in <i class="fa-solid fa-right-to-bracket"></i></a>
+                <a href="signup.html" class="header-links-button ">sign up <i class="fa-solid fa-user-plus"></i></a>
             </div>
         </div>
     </div>
@@ -103,18 +103,19 @@
             </div>
         </div>
         <div class="landing-page-search">
-            <input type="text" name="SEARCH" placeholder="start typing..." />
-            <button class="btn" type="submit">SEARCH</button>
-            <form action="">
-                <div>
-                    <select id="category" name="category">
-                        <option value="All category">All category</option>
-                        <option value="DRUGS">DRUGS</option>
-                        <option value="COSMOTICS">COSMOTICS</option>
-                    </select>
-                </div>
-            </form>
+    <input type="text" id="searchInput" name="SEARCH" placeholder="start typing..." />
+    <button class="btn" id="searchBtn" type="button">SEARCH</button>
+    <form action="">
+        <div>
+            <select id="category" name="category">
+                <option value="All category">All category</option>
+                <option value="DRUGS">DRUGS</option>
+                <option value="COSMOTICS">COSMOTICS</option>
+            </select>
         </div>
+    </form>
+</div>
+
         <div class="landing-page-image">
             <img src="images/logo2.png" />
         </div>

@@ -232,3 +232,8 @@ function updateButtonsState(productId) {
        });
 }
 updatefavorite()
+
+/* start search*/
+
+/* end search */
+
