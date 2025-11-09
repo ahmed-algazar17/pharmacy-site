@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout | DR / ESRAA ELALFY PHARMACY</title>
+    <link rel="icon" href="images/logo2.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .checkout-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .checkout-form,
+        .order-summary {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+
+        .checkout-form h2,
+        .order-summary h2 {
+            color: #0077b6;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0077b6;
+            padding-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .order-summary .total-line {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .order-summary .grand-total {
+            font-weight: bold;
+            color: #0077b6;
+            font-size: 18px;
+            border-top: 2px solid #ddd;
+            margin-top: 15px;
+            padding-top: 10px;
+        }
+
+        .btn-primary {
+            display: block;
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px;
+            background: #0077b6;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #005f87;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--cart-->
+    <div class="cart">
+        <div class="top_cart">
+            <h3>Cart Items : <span class="Count_item_cart">0</span></h3>
+            <span onclick="open_close_cart()" class="close_cart"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_cart" id="cart_items"></div>
+        <div class="bottom_cart">
+            <div class="total">
+                <p>subtotal</p>
+                <p class="price_cart_total">50EG</p>
+            </div>
+            <div class="bottom_cart">
+                <a href="checkout.html" class="btn_cart btn">Checkout</a>
+                <span onclick="open_close_cart()" class="btn_cart trans_bg btn">Shop More</span>
+            </div>
+        </div>
+    </div>
+
+    <!--favorite-->
+    <div class="favorite">
+        <div class="top_favorite">
+            <h3>Favorite Items : <span class="Count_item_favorite">0</span></h3>
+            <span onclick="open_close_favorite()" class="close_favorite"> <i
+                    class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_favorite" id="favorite_items"></div>
+    </div>
+
+    <!--HEADER-->
+    <div class="header">
+        <div> <img class="logo" src="images/file_00000000d7d861f48d124e8eb4435ce9.png" /></div>
+        <div class="header-middle-section">
+            <h1 style="color: white; font-size:50px; margin-bottom: 30px;">DR / ESRAA EL-ALFY PHARAMACY</h1>
+            <span style="font-size: 25px;">WELCOME TO OUR PHARAMACY</span>
+            <h3>YOUR BEST MEDICAL CONSULT</h3>
+        </div>
+        <div class="header-icons">
+            <div class="icon-box">
+                <a href="index.html">
+                    <i class="fa-solid fa-house fa-2xl"></i>
+                </a>
+            </div>
+            <div onclick="open_close_favorite()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-heart fa-2xl"></i>
+                    <span class="count count-header-favorite">0</span>
+                </a>
+            </div>
+            <div onclick="open_close_cart()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                    <span class="count count-item-header">0</span>
+                </a>
+            </div>
+            <div>
+                <a href="login.html" class="header-links-button">Log in <i class="fa-solid fa-right-to-bracket"></i></a>
+                <a href="signup.html" class="header-links-button">Sign up <i class="fa-solid fa-user-plus"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ CHECKOUT PAGE CONTENT -->
+    <div class="checkout-container">
+
+        <!-- Billing Info -->
+        <div class="checkout-form">
+            <h2><i class="fa-solid fa-user"></i> Billing Information</h2>
+
+            <form id="checkoutForm">
+                <label>Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label>Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+                <label>Shipping Address</label>
+                <textarea id="address" rows="3" placeholder="Enter your full address" required></textarea>
+
+                <label>City</label>
+                <input type="text" id="city" placeholder="Enter your city" required>
+
+                <label>Payment Method</label>
+                <select id="payment">
+                    <option value="cash">Cash on Delivery</option>
+                    <option value="credit">Credit / Debit Card</option>
+                    <option value="wallet">E-Wallet (Vodafone, Etisalat, etc.)</option>
+                </select>
+
+                <button type="submit" class="btn-primary">Place Order</button>
+            </form>
+
+            <div class="success-message" id="successMessage">
+                ✅ Your order has been placed successfully!<br>
+                You will be redirected to the homepage shortly.
+            </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="order-summary">
+            <h2><i class="fa-solid fa-cart-shopping"></i> Order Summary</h2>
+
+            <div id="order-items"></div>
+
+            <div class="total-line">
+                <p>Subtotal:</p>
+                <p class="subtotal-value">0 EGP</p>
+            </div>
+
+            <div class="total-line">
+                <p>Shipping:</p>
+                <p class="shipping-value">25 EGP</p>
+            </div>
+
+            <div class="grand-total">
+                <p>Total:</p>
+                <p class="total-value">0 EGP</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JS Files -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const orderContainer = document.getElementById("order-items");
+            const subtotalElement = document.querySelector(".subtotal-value");
+            const shippingElement = document.querySelector(".shipping-value");
+            const totalElement = document.querySelector(".total-value");
+
+            let subtotal = 0;
+
+            if (cart.length === 0) {
+                orderContainer.innerHTML = "<p>No items in your cart.</p>";
+                subtotalElement.textContent = "0 EGP";
+                shippingElement.textContent = "0 EGP";
+                totalElement.textContent = "0 EGP";
+                return;
+            }
+
+            orderContainer.innerHTML = "";
+
+            cart.forEach(item => {
+                const itemTotal = item.price_egp * item.quantity;
+                subtotal += itemTotal;
+
+                const div = document.createElement("div");
+                div.classList.add("checkout-item");
+                div.innerHTML = `
+          <div class="checkout-item-info" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                  <img src="${item.image}" alt="${item.trade_name}" style="width:70px; height:70px; border-radius:8px;">
+                  <div>
+                      <p><strong>${item.trade_name}</strong></p>
+                      <p>Qty: ${item.quantity}</p>
+                  </div>
+              </div>
+              <p><strong>${itemTotal} EGP</strong></p>
+          </div>`;
+                orderContainer.appendChild(div);
+            });
+
+            const shipping = 25;
+            const total = subtotal + shipping;
+
+            subtotalElement.textContent = `${subtotal} EGP`;
+            shippingElement.textContent = `${shipping} EGP`;
+            totalElement.textContent = `${total} EGP`;
+        });
+
+        // ✅ Handle Form Submission
+        document.getElementById("checkoutForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // إظهار رسالة النجاح
+            const msg = document.getElementById("successMessage");
+            msg.style.display = "block";
+
+            // تفريغ السلة
+            localStorage.removeItem("cart");
+
+            // إعادة التوجيه بعد ثانيتين
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 2000);
+        });
+
+    </script>
+
+
+
+
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--file JS-->
+    <script src="js/swiper.js" defer></script>
+    <script src="js/items_home.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+
+</body>
+
+</html>
