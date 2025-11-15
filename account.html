@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Account | DR / ESRAA ELALFY PHARMACY</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo2.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="account.css"> 
+</head>
+
+<body>
+
+<style>
+    /* ================================================= */
+/* 1. General Layout and Header */
+/* ================================================= */
+.account-page {
+    padding: 40px 0 80px 0;
+    min-height: 70vh;
+}
+
+.account-page h1 {
+    color: var(--btn-color); /* الأزرق الداكن */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.account-layout {
+    display: flex;
+    gap: 30px;
+}
+
+/* ================================================= */
+/* 2. Sidebar Navigation */
+/* ================================================= */
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    height: fit-content; /* يجعله بنفس ارتفاع المحتوى */
+    border-right: 5px solid var(--main-color); /* شريط جانبي سماوي */
+}
+
+.user-info {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.user-info i {
+    color: var(--btn-color);
+    margin-bottom: 10px;
+}
+
+.user-info h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.user-info #accountUsername {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.account-nav .nav-item {
+    display: block;
+    padding: 12px 10px;
+    margin-bottom: 8px;
+    color: #555;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.account-nav .nav-item i {
+    margin-right: 10px;
+    color: var(--btn-color); /* أيقونات باللون الداكن */
+}
+
+.account-nav .nav-item:hover,
+.account-nav .nav-item.active {
+    background-color: var(--main-color); /* خلفية سماوية عند التحديد */
+    color: white;
+}
+
+.account-nav .nav-item.active i {
+    color: white;
+}
+
+.account-nav .logout-link {
+    color: #e74c3c; /* لون مميز لزر الخروج */
+    margin-top: 20px;
+}
+
+.account-nav .logout-link i {
+    color: #e74c3c;
+}
+
+/* ================================================= */
+/* 3. Content Area (Sections) */
+/* ================================================= */
+.content-area {
+    flex-grow: 1;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.account-section {
+    display: none; /* إخفاء جميع الأقسام افتراضياً */
+}
+
+.account-section.active {
+    display: block; /* إظهار القسم النشط فقط */
+}
+
+.account-section h2 {
+    color: var(--btn-color);
+    border-bottom: 2px solid var(--main-color);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.section-description {
+    color: #777;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+/* 4. Form Styling (Profile/Addresses) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--main-color);
+    outline: none;
+}
+
+.update-btn, .add-address-btn {
+    background-color: var(--btn-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.update-btn:hover, .add-address-btn:hover {
+    background-color: var(--main-color);
+    color: black;
+}
+
+/* ================================================= */
+/* 5. Modal Styles (Address Form) */
+/* ================================================= */
+
+.modal {
+    display: none; /* مخفية افتراضياً */
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* خلفية سوداء شفافة */
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* توسيط عمودي وأفقي */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%; 
+    max-width: 500px; /* عرض مناسب للنموذج */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--btn-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h3 {
+    color: var(--btn-color);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-right: 10px;
+}
+</style>
+
+    <div class="cart">
+        <div class="top_cart">
+            <h3>Cart Items : <span class="Count_item_cart">0</span></h3>
+            <span onclick="open_close_cart()" class="close_cart"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_cart" id="cart_items">
+
+
+
+        </div>
+
+
+        <div class="bottom_cart">
+            <div class="total">
+                <p>subtotal</p>
+                <p class="price_cart_total">50EG</p>
+            </div>
+            <div class="bottom_cart">
+                <a href="#" class="btn_cart btn">Checkout</a>
+                <span onclick="open_close_cart()" class="btn_cart trans_bg btn">Shop More</span>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!--favorite-->
+    <div class="favorite">
+        <div class="top_favorite">
+            <h3>Favorite Items : <span class="Count_item_favorite">0</span></h3>
+            <span onclick="open_close_favorite()" class="close_favorite"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_favorite" id="favorite_items">
+           
+        </div>
+    </div>
+    <!--HEADER-->
+    <div class="header">
+        <div> <img class="logo" src="images/file_00000000d7d861f48d124e8eb4435ce9.png" /></div>
+        <div class="header-middle-section">
+            <h1 style="color: white; font-size:50px; margin-bottom: 30px;">DR / ESRAA EL-ALFY PHARAMACY</h1>
+            <span style="font-size: 25px;">WELCOME TO OUR PHARAMACY</span>
+            <h3>YOUR BEST MEDICAL CONSULT</h3>
+
+        </div>
+        <div class="header-icons">
+            <div class="icon-box">
+                <a href="index.html">
+                    <i class="fa-solid fa-house fa-2xl"></i>
+                </a>
+            </div>
+            <div onclick="open_close_favorite()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-heart fa-2xl"></i>
+                    <span class="count count-header-favorite">0</span>
+                </a>
+            </div>
+            <div onclick="open_close_cart()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                    <span class="count count-item-header">0</span>
+                </a>
+            </div>
+            <div id="authButtons">
+            </div>
+        </div>
+    </div>
+
+    <section class="account-page">
+        <div class="container">
+            <h1>My Account Dashboard</h1>
+
+            <div class="account-layout">
+                <div class="sidebar">
+                    <div class="user-info">
+                        <i class="fa-solid fa-user-circle fa-3x"></i>
+                        <h3>Hello, <span id="accountUsername">User</span>!</h3>
+                    </div>
+                    
+                    <nav class="account-nav">
+                        <a href="#profile" class="nav-item active" data-target="profile">
+                            <i class="fa-solid fa-address-card"></i> Personal Profile
+                        </a>
+                        <a href="#orders" class="nav-item" data-target="orders">
+                            <i class="fa-solid fa-box-open"></i> My Orders
+                        </a>
+                        <a href="#addresses" class="nav-item" data-target="addresses">
+                            <i class="fa-solid fa-location-dot"></i> Shipping Addresses
+                        </a>
+                        <a href="#" class="nav-item logout-link" onclick="handleLogout(event)">
+                            <i class="fa-solid fa-right-from-bracket"></i> Log Out
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="content-area">
+                    
+                    <div id="profile" class="account-section active">
+                        <h2>Personal Profile</h2>
+                        <form id="profileForm">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" value="Dr. Ahmed Khamis" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" value="ahmed@example.com" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" value="01012345678" required>
+                            </div>
+                            <button type="submit" class="btn update-btn">Update Profile</button>
+                        </form>
+                    </div>
+
+                    <div id="orders" class="account-section">
+                        <h2>My Orders</h2>
+                        <p class="section-description">Review your purchase history and track active orders.</p>
+                        <div id="orderHistoryTable">
+                            <p>No orders found yet. Start shopping!</p>
+                        </div>
+                    </div>
+                    
+                    <div id="addresses" class="account-section">
+                        <h2>Shipping Addresses</h2>
+                        <p class="section-description">Manage the addresses we use to deliver your medications.</p>
+                        <div id="addressList">
+                            <div class="address-card">
+                                <h4>Home Address (Default)</h4>
+                                <p>123 Nasr City, Cairo, Egypt</p>
+                                <p>Receiver: Dr. Ahmed Khamis</p>
+                                <button class="btn edit-btn">Edit</button>
+                               
+                            </div>
+                        </div>
+                         <br>
+                        <button class="btn add-address-btn">Add New Address</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="addressModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('addressModal')">&times;</span>
+        <h3 id="modalTitle">Add New Address</h3>
+        <form id="addressForm">
+            <input type="hidden" id="addressIndex"> <div class="form-group">
+                <label for="addressName">Address Title (e.g., Home, Work)</label>
+                <input type="text" id="addressName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="addressDetails">Street & Building Details</label>
+                <input type="text" id="addressDetails" required>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City / Area</label>
+                <input type="text" id="city" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneContact">Contact Phone Number</label>
+                <input type="tel" id="phoneContact" required>
+            </div>
+            
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="defaultAddress">
+                <label for="defaultAddress">Set as Default Address</label>
+            </div>
+
+            <button type="submit" class="btn save-address-btn">Save Address</button>
+        </form>
+    </div>
+    </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const navItems = document.querySelectorAll('.account-nav .nav-item');
+    const accountSections = document.querySelectorAll('.account-section');
+    const usernameDisplay = document.getElementById('accountUsername');
+    
+    // عناصر الـ Modal
+    const addressModal = document.getElementById('addressModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const addressForm = document.getElementById('addressForm');
+    const addAddressBtn = document.querySelector('.add-address-btn');
+    const addressListContainer = document.getElementById('addressList');
+
+
+    // ===================================================
+    // 1. عرض اسم المستخدم المسجل دخوله
+    // ===================================================
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user && usernameDisplay) {
+        usernameDisplay.textContent = user.username.split(' ')[0];
+    }
+
+
+    // ===================================================
+    // 2. وظيفة التبديل بين الأقسام (باستخدام الـ Hash)
+    // ===================================================
+
+    // دالة لتفعيل القسم بناءً على الـ Hash في رابط الـ URL
+    function activateSectionByHash() {
+        // قراءة الجزء بعد # في الرابط (مثل #orders)
+        // الافتراضي هو 'profile'
+        const hash = window.location.hash.substring(1) || 'profile';
+        
+        // إزالة حالة النشاط من كل الروابط والأقسام
+        navItems.forEach(nav => nav.classList.remove('active'));
+        accountSections.forEach(section => section.classList.remove('active'));
+
+        // تفعيل الرابط والقسم المستهدف بناءً على الـ Hash
+        const targetSection = document.getElementById(hash);
+        const targetNavItem = document.querySelector(`.account-nav a[data-target="${hash}"]`);
+
+        if (targetSection && targetNavItem) {
+            targetSection.classList.add('active');
+            targetNavItem.classList.add('active');
+        } else {
+            // تفعيل "profile" إذا كان الهاش غير صالح أو غير موجود
+            document.getElementById('profile').classList.add('active');
+            document.querySelector('.account-nav a[data-target="profile"]').classList.add('active');
+        }
+    }
+    
+    // استدعاء المعالجة عند تحميل الصفحة
+    activateSectionByHash(); 
+
+
+    // ربط التنقل الداخلي (عند النقر على الشريط الجانبي)
+    navItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            // تجاهل روابط الخروج (التي تم ربطها بـ handleLogout مباشرة في HTML)
+            if (this.classList.contains('logout-link')) return;
+
+            e.preventDefault();
+            const targetId = this.getAttribute('data-target');
+
+            // تحديث الـ URL بدون إعادة تحميل الصفحة
+            window.location.hash = targetId; 
+            
+            // تفعيل القسم يدويًا
+            activateSectionByHash();
+        });
+    });
+
+
+    // ===================================================
+    // 3. وظائف العناوين (Addresses Modal)
+    // ===================================================
+    
+    // دالة فتح الـ Modal
+    function showAddressForm(addressData = null, index = null) {
+        addressForm.reset();
+        
+        if (addressData) {
+            // حالة التعديل
+            modalTitle.textContent = 'Edit Shipping Address';
+            document.getElementById('addressIndex').value = index;
+            document.getElementById('addressName').value = addressData.name || '';
+            document.getElementById('addressDetails').value = addressData.details || '';
+            document.getElementById('city').value = addressData.city || '';
+            document.getElementById('phoneContact').value = addressData.phone || '';
+            document.getElementById('defaultAddress').checked = addressData.isDefault || false;
+        } else {
+            // حالة الإضافة الجديدة
+            modalTitle.textContent = 'Add New Address';
+            document.getElementById('addressIndex').value = '';
+        }
+        
+        addressModal.style.display = "block";
+    }
+
+    // دالة إغلاق الـ Modal
+    window.closeModal = function(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+
+    // ربط زر "Add New Address"
+    if (addAddressBtn) {
+        addAddressBtn.addEventListener('click', () => showAddressForm());
+    }
+
+    // ربط أزرار "Edit"
+    function attachEditListeners() {
+        const editButtons = addressListContainer.querySelectorAll('.edit-btn');
+        editButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const addressCard = this.closest('.address-card');
+                const addressIndex = addressCard.getAttribute('data-index') || 0;
+                
+                // 💡 ملاحظة: يجب تعديل هذا الجزء لاحقًا ليقرأ البيانات الفعلية من localStorage
+                const mockData = {
+                    name: addressCard.querySelector('h4').textContent.split(' ')[0],
+                    details: addressCard.querySelector('p:nth-of-type(1)').textContent,
+                    city: 'Cairo',
+                    phone: '01012345678'
+                };
+                
+                showAddressForm(mockData, addressIndex);
+            });
+        });
+    }
+
+    // استدعاء دالة ربط التعديل عند تحميل الصفحة
+    attachEditListeners(); 
+
+    // إغلاق الـ Modal عند النقر خارجها
+    window.onclick = function(event) {
+        if (event.target == addressModal) {
+            closeModal('addressModal');
+        }
+    }
+});
+</script>
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--file JS-->
+    <script src="js/swiper.js" defer></script>
+    <script src="js/items_home.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+
+</body>
+</html>

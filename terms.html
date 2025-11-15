@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <title>الشروط والأحكام | صيدلية د/ إسراء الألفي</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo2.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        /* ============================================== */
+        /* تنسيقات خاصة لصفحة الشروط والأحكام (Terms) */
+        /* ============================================== */
+        .terms-page {
+            padding: 50px 0 80px 0;
+            min-height: 70vh;
+            text-align: right; 
+        }
+        .terms-page .container {
+            max-width: 900px;
+        }
+        .terms-page h1 {
+            color: var(--btn-color); 
+            border-bottom: 3px solid var(--main-color); 
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .terms-page h2 {
+            color: var(--main-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-right: 10px;
+            border-right: 4px solid var(--btn-color);
+            font-size: 24px;
+        }
+        .terms-page h3 {
+            color: var(--btn-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .terms-page p, .terms-page ul {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .terms-page ul {
+            list-style: disc;
+            margin-right: 25px;
+            padding-right: 0;
+        }
+        .terms-page ul li {
+            margin-bottom: 10px;
+        }
+        .important-note {
+            background-color: #ffebeb; /* خلفية حمراء فاتحة للتحذير */
+            border-right: 5px solid #e74c3c; /* خط جانبي أحمر */
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .important-note strong {
+            color: #e74c3c;
+        }
+
+        /* تعديل خاص للهيدر لضمان الترتيب الصحيح في هذه الصفحة */
+        .header {
+            flex-direction: row-reverse; 
+        }
+        
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+        <div> <img class="logo" src="images/file_00000000d7d861f48d124e8eb4435ce9.png" /></div>
+        <div class="header-middle-section">
+            <h1 style="color: white; font-size:50px; margin-bottom: 30px;">DR / ESRAA EL-ALFY PHARAMACY</h1>
+            <span style="font-size: 25px;">WELCOME TO OUR PHARAMACY</span>
+            <h3>YOUR BEST MEDICAL CONSULT</h3>
+        </div>
+        <div class="header-icons">
+            <div class="icon-box">
+                <a href="index.html">
+                    <i class="fa-solid fa-house fa-2xl"></i>
+                </a>
+            </div>
+            <div onclick="open_close_favorite()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-heart fa-2xl"></i>
+                    <span class="count count-header-favorite">0</span>
+                </a>
+            </div>
+            <div onclick="open_close_cart()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                    <span class="count count-item-header">0</span>
+                </a>
+            </div>
+            <div id="authButtons">
+            </div>
+        </div>
+    </div>
+    
+    <div class="cart">
+        <div class="top_cart">
+            <h3>Cart Items : <span class="Count_item_cart">0</span></h3>
+            <span onclick="open_close_cart()" class="close_cart"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_cart" id="cart_items">
+        </div>
+        <div class="bottom_cart">
+            <div class="total">
+                <p>subtotal</p>
+                <p class="price_cart_total">50EG</p>
+            </div>
+            <div class="bottom_cart">
+                <a href="#" class="btn_cart btn">Checkout</a>
+                <span onclick="open_close_cart()" class="btn_cart trans_bg btn">Shop More</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="favorite">
+        <div class="top_favorite">
+            <h3>Favorite Items : <span class="Count_item_favorite">0</span></h3>
+            <span onclick="open_close_favorite()" class="close_favorite"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_favorite" id="favorite_items">
+        </div>
+    </div>
+
+    <section class="terms-page">
+        <div class="container">
+            <h1><i class="fa-solid fa-file-contract"></i> الشروط والأحكام</h1>
+
+            <p>مرحباً بك في صيدلية د/ إسراء الألفي. يرجى قراءة هذه الشروط والأحكام ("الشروط") بعناية قبل استخدام خدماتنا. استخدامك للموقع يعني موافقتك الكاملة وغير المشروطة على هذه الشروط.</p>
+            
+            <p><strong>تاريخ آخر تحديث: 16 نوفمبر 2025</strong></p>
+
+            <div class="important-note">
+                <strong>تنبيه هام حول الأدوية:</strong>
+                <p>صيدلية د/ إسراء الألفي هي منصة بيع بالتجزئة للأدوية والمستلزمات الطبية. لا يمثل محتوى الموقع أو الخدمات المقدمة بديلاً عن الاستشارة الطبية المتخصصة أو الوصفات الطبية. يجب دائماً استشارة طبيبك أو الصيدلي قبل تناول أي دواء.</p>
+            </div>
+
+            <h2>1. شروط استخدام الموقع</h2>
+            <ul>
+                <li><strong>الأهلية:</strong> يجب أن لا يقل عمر المستخدم عن 18 عاماً أو أن يستخدم الموقع تحت إشراف ولي الأمر.</li>
+                <li><strong>البيانات الشخصية:</strong> يلتزم المستخدم بتقديم بيانات دقيقة وكاملة عند التسجيل وإجراء عمليات الشراء.</li>
+                <li><strong>الحسابات وكلمات المرور:</strong> يتحمل المستخدم مسؤولية الحفاظ على سرية كلمة المرور الخاصة به.</li>
+            </ul>
+
+            <h2>2. المنتجات والأسعار</h2>
+            <h3>2.1 توافر المنتجات:</h3>
+            <p>يخضع توافر المنتجات للتغير في أي وقت. في حال عدم توفر منتج طلبته، سيتم إخطارك وإعادة المبلغ المدفوع أو استبداله بمنتج آخر بموافقتك.</p>
+
+            <h3>2.2 الأسعار:</h3>
+            <p>جميع أسعار المنتجات شاملة ضريبة القيمة المضافة ما لم يُذكر خلاف ذلك. تحتفظ الصيدلية بحق تعديل الأسعار في أي وقت دون إشعار مسبق.</p>
+
+            <h2>3. الأدوية التي تحتاج وصفة طبية</h2>
+            <ul>
+                <li>نحتفظ بالحق في رفض صرف أي دواء يستلزم وصفة طبية (Rx) ما لم يتم تزويدنا بصورة واضحة وسارية للوصفة الطبية المعتمدة.</li>
+                <li>يجب أن تتطابق بيانات المريض في الوصفة مع بيانات العميل.</li>
+                <li>قد يقوم الصيدلي بالتواصل معك للتحقق من بيانات الوصفة قبل إتمام الطلب.</li>
+            </ul>
+
+            <h2>4. الشحن والتوصيل والإرجاع</h2>
+            <p>تخضع عمليات الشحن والتوصيل والإرجاع للشروط المنصوص عليها في سياساتنا المنفصلة:</p>
+            <ul>
+                <li><i class="fa-solid fa-link"></i> <a href="shipping.html">سياسة الشحن والتوصيل</a></li>
+                <li><i class="fa-solid fa-link"></i> <a href="returns.html">سياسة الإرجاع والاستبدال</a></li>
+            </ul>
+
+            <h2>5. حدود المسؤولية</h2>
+            <p>صيدلية د/ إسراء الألفي غير مسؤولة عن أي أضرار ناتجة عن سوء استخدام المنتجات المشتراة، أو التفاعلات الدوائية الناتجة عن عدم استشارة طبيب متخصص.</p>
+            
+            <div class="important-note">
+                <strong>للتواصل معنا بخصوص الشروط:</strong>
+                <p>إذا كان لديك أي استفسار حول هذه الشروط، يرجى الاتصال بنا عبر:</p>
+                <p><i class="fa-solid fa-envelope"></i> البريد الإلكتروني: legal@esraa-pharmacy.com</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/items_home.js" defer></script> 
+</body>
+</html>

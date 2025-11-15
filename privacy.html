@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <title>سياسة الخصوصية | صيدلية د/ إسراء الألفي</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo2.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        /* ============================================== */
+        /* تنسيقات خاصة لصفحة الخصوصية (Privacy) */
+        /* ============================================== */
+        .privacy-page {
+            padding: 50px 0 80px 0;
+            min-height: 70vh;
+            text-align: right; 
+        }
+        .privacy-page .container {
+            max-width: 900px;
+        }
+        .privacy-page h1 {
+            color: var(--btn-color); 
+            border-bottom: 3px solid var(--main-color); 
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .privacy-page h2 {
+            color: var(--main-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-right: 10px;
+            border-right: 4px solid var(--btn-color);
+            font-size: 24px;
+        }
+        .privacy-page p, .privacy-page ul {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .privacy-page ul {
+            list-style: disc;
+            margin-right: 25px;
+            padding-right: 0;
+        }
+        .privacy-page ul li {
+            margin-bottom: 10px;
+        }
+        .security-note {
+            background-color: #f0fff0; /* خلفية خضراء فاتحة */
+            border-right: 5px solid #2ecc71; /* خط جانبي أخضر */
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .security-note strong {
+            color: #2ecc71;
+        }
+
+        /* تعديل خاص للهيدر لضمان الترتيب الصحيح في هذه الصفحة */
+        .header {
+            flex-direction: row-reverse; 
+        }
+        
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+        <div> <img class="logo" src="images/file_00000000d7d861f48d124e8eb4435ce9.png" /></div>
+        <div class="header-middle-section">
+            <h1 style="color: white; font-size:50px; margin-bottom: 30px;">DR / ESRAA EL-ALFY PHARAMACY</h1>
+            <span style="font-size: 25px;">WELCOME TO OUR PHARAMACY</span>
+            <h3>YOUR BEST MEDICAL CONSULT</h3>
+        </div>
+        <div class="header-icons">
+            <div class="icon-box">
+                <a href="index.html">
+                    <i class="fa-solid fa-house fa-2xl"></i>
+                </a>
+            </div>
+            <div onclick="open_close_favorite()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-heart fa-2xl"></i>
+                    <span class="count count-header-favorite">0</span>
+                </a>
+            </div>
+            <div onclick="open_close_cart()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                    <span class="count count-item-header">0</span>
+                </a>
+            </div>
+            <div id="authButtons">
+            </div>
+        </div>
+    </div>
+    
+    <div class="cart">
+        <div class="top_cart">
+            <h3>Cart Items : <span class="Count_item_cart">0</span></h3>
+            <span onclick="open_close_cart()" class="close_cart"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_cart" id="cart_items">
+        </div>
+        <div class="bottom_cart">
+            <div class="total">
+                <p>subtotal</p>
+                <p class="price_cart_total">50EG</p>
+            </div>
+            <div class="bottom_cart">
+                <a href="#" class="btn_cart btn">Checkout</a>
+                <span onclick="open_close_cart()" class="btn_cart trans_bg btn">Shop More</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="favorite">
+        <div class="top_favorite">
+            <h3>Favorite Items : <span class="Count_item_favorite">0</span></h3>
+            <span onclick="open_close_favorite()" class="close_favorite"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_favorite" id="favorite_items">
+        </div>
+    </div>
+
+    <section class="privacy-page">
+        <div class="container">
+            <h1><i class="fa-solid fa-user-shield"></i> سياسة الخصوصية</h1>
+
+            <p>نحن في صيدلية د/ إسراء الألفي نولي أهمية قصوى لخصوصية بياناتك وصحتك. توضح هذه السياسة كيف نقوم بجمع واستخدام وحماية معلوماتك الشخصية عند استخدامك لموقعنا.</p>
+            
+            <p><strong>تاريخ النفاذ: 16 نوفمبر 2025</strong></p>
+
+            <div class="security-note">
+                <strong>التزامنا:</strong>
+                <p>يتم التعامل مع جميع المعلومات الصحية والبيانات الشخصية بسرية تامة، ولن يتم مشاركتها إلا للغرض المحدد الذي وافقت عليه (مثل إتمام عملية الشحن).</p>
+            </div>
+
+            <h2>1. المعلومات التي نجمعها</h2>
+            <p>نجمع نوعين من المعلومات لتقديم خدماتنا وتحسين تجربتك:</p>
+            <ul>
+                <li>**بيانات التعريف الشخصية:** الاسم الكامل، عنوان البريد الإلكتروني، رقم الهاتف، وعناوين الشحن.</li>
+                <li>**بيانات الطلب والصحة (في حال الضرورة):** تفاصيل المنتجات المشتراة، تاريخ الشراء، وأي معلومات صحية يتم تقديمها عند طلب الأدوية التي تحتاج وصفة طبية.</li>
+                <li>**بيانات التصفح:** معلومات حول جهازك، مثل عنوان IP ونوع المتصفح والصفحات التي قمت بزيارتها، وذلك باستخدام ملفات تعريف الارتباط (Cookies).</li>
+            </ul>
+
+            <h2>2. كيف نستخدم معلوماتك</h2>
+            <p>تُستخدم معلوماتك الشخصية للأغراض التالية:</p>
+            <ul>
+                <li>إتمام ومعالجة وتوصيل طلباتك.</li>
+                <li>التواصل معك بخصوص حالة طلبك أو لأغراض خدمة العملاء.</li>
+                <li>تحسين خدماتنا ومنتجاتنا وعرض المحتوى المناسب لك.</li>
+                <li>الالتزام بالمتطلبات القانونية والتنظيمية (خاصة فيما يتعلق بصرف الأدوية).</li>
+            </ul>
+
+            <h2>3. مشاركة المعلومات</h2>
+            <p>نحن لا نبيع أو نتاجر أو نؤجر معلومات التعريف الشخصية الخاصة بك للغير. قد نشاركها فقط مع الأطراف التالية ووفقاً لضرورة العمل:</p>
+            <ul>
+                <li><strong>شركات الشحن:</strong> لتمكينهم من توصيل طلبك (الاسم والعنوان ورقم الهاتف فقط).</li>
+                <li><strong>مقدمي خدمات الدفع:</strong> لمعالجة المدفوعات (في حال تفعيل الدفع الإلكتروني).</li>
+                <li>**الجهات القانونية:** إذا كان ذلك مطلوباً بموجب القانون أو أمر قضائي.</li>
+            </ul>
+
+            <h2>4. حماية البيانات</h2>
+            <p>نتخذ التدابير الأمنية المناسبة لحماية بياناتك من الوصول غير المصرح به أو التعديل أو الإفصاح. وتشمل هذه التدابير:</p>
+            <ul>
+                <li>استخدام بروتوكول التشفير SSL لحماية نقل البيانات على الموقع.</li>
+                <li>تخزين البيانات في خوادم آمنة ومحمية.</li>
+                <li>الوصول المحدود إلى البيانات الشخصية للموظفين المصرح لهم فقط.</li>
+            </ul>
+
+            <h2>5. حقوقك كمستخدم</h2>
+            <p>يحق لك في أي وقت:</p>
+            <ul>
+                <li>مراجعة البيانات الشخصية التي نحتفظ بها عنك.</li>
+                <li>طلب تصحيح أو تحديث بياناتك.</li>
+                <li>طلب حذف حسابك وبياناتك (باستثناء البيانات التي يجب الاحتفاظ بها قانونياً).</li>
+            </ul>
+            
+            <div class="security-note">
+                <strong>للتواصل بشأن الخصوصية:</strong>
+                <p>إذا كان لديك أي استفسارات أو طلبات بخصوص سياسة الخصوصية، يرجى التواصل معنا عبر:</p>
+                <p><i class="fa-solid fa-envelope"></i> البريد الإلكتروني: privacy@esraa-pharmacy.com</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/items_home.js" defer></script> 
+</body>
+</html>

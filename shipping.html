@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <title>سياسة الشحن والتوصيل | صيدلية د/ إسراء الألفي</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo2.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        /* ============================================== */
+        /* تنسيقات خاصة لصفحة الشحن (Shipping) */
+        /* ============================================== */
+        .shipping-page {
+            padding: 50px 0 80px 0;
+            min-height: 70vh;
+            text-align: right; 
+        }
+        .shipping-page .container {
+            max-width: 900px;
+        }
+        .shipping-page h1 {
+            color: var(--btn-color); 
+            border-bottom: 3px solid var(--main-color); 
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .shipping-page h2 {
+            color: var(--main-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-right: 10px;
+            border-right: 4px solid var(--btn-color);
+            font-size: 24px;
+        }
+        .shipping-page p, .shipping-page ul {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .shipping-page ul {
+            list-style: disc;
+            margin-right: 25px;
+            padding-right: 0;
+        }
+        .shipping-page ul li {
+            margin-bottom: 10px;
+        }
+        .info-box {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 8px;
+            border-right: 5px solid var(--main-color); 
+            margin-top: 30px;
+        }
+        .info-box strong {
+            color: var(--btn-color);
+        }
+
+        .header {
+            flex-direction: row-reverse; 
+        }
+       
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+        <div> <img class="logo" src="images/file_00000000d7d861f48d124e8eb4435ce9.png" /></div>
+        <div class="header-middle-section">
+            <h1 style="color: white; font-size:50px; margin-bottom: 30px;">DR / ESRAA EL-ALFY PHARAMACY</h1>
+            <span style="font-size: 25px;">WELCOME TO OUR PHARAMACY</span>
+            <h3>YOUR BEST MEDICAL CONSULT</h3>
+        </div>
+        <div class="header-icons">
+            <div class="icon-box">
+                <a href="index.html">
+                    <i class="fa-solid fa-house fa-2xl"></i>
+                </a>
+            </div>
+            <div onclick="open_close_favorite()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-heart fa-2xl"></i>
+                    <span class="count count-header-favorite">0</span>
+                </a>
+            </div>
+            <div onclick="open_close_cart()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                    <span class="count count-item-header">0</span>
+                </a>
+            </div>
+            <div id="authButtons">
+            </div>
+        </div>
+    </div>
+    
+    <div class="cart">
+        <div class="top_cart">
+            <h3>Cart Items : <span class="Count_item_cart">0</span></h3>
+            <span onclick="open_close_cart()" class="close_cart"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_cart" id="cart_items">
+        </div>
+        <div class="bottom_cart">
+            <div class="total">
+                <p>subtotal</p>
+                <p class="price_cart_total">50EG</p>
+            </div>
+            <div class="bottom_cart">
+                <a href="#" class="btn_cart btn">Checkout</a>
+                <span onclick="open_close_cart()" class="btn_cart trans_bg btn">Shop More</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="favorite">
+        <div class="top_favorite">
+            <h3>Favorite Items : <span class="Count_item_favorite">0</span></h3>
+            <span onclick="open_close_favorite()" class="close_favorite"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_favorite" id="favorite_items">
+        </div>
+    </div>
+
+    <section class="shipping-page">
+        <div class="container">
+            <h1><i class="fa-solid fa-truck-fast"></i> سياسة الشحن والتوصيل</h1>
+
+            <div class="info-box">
+                <p>نحن في صيدلية د/ إسراء الألفي نسعى لتقديم أسرع وأفضل خدمة توصيل لضمان وصول أدويتك ومنتجاتك إليك في أفضل حال.</p>
+            </div>
+
+            <h2>1. مناطق التوصيل والرسوم</h2>
+            <p>نقوم حاليًا بالتوصيل في المناطق التالية. يمكن التحقق من رسوم الشحن عند إنهاء عملية الشراء (Checkout):</p>
+            <ul>
+                <li>**داخل محافظة الدقهلية:** رسوم موحدة.</li>
+                <li>**المحافظات الأخرى:** قد تختلف الرسوم حسب المسافة وتكلفة شركة الشحن الخارجية.</li>
+                <li>**الشحن المجاني:** يتم توفيره للطلبات التي تتجاوز قيمة محددة (على سبيل المثال، 500 جنيه مصري).</li>
+            </ul>
+
+            <h2>2. مدة التوصيل المتوقعة</h2>
+            <ul>
+                <li>**محافظة الدقهلية:** التوصيل خلال **24 إلى 48 ساعة عمل** من تأكيد الطلب.</li>
+                <li>**المحافظات الأخرى:** التوصيل خلال **2 إلى 5 أيام عمل** من تأكيد الطلب.</li>
+                <li>يتم تأكيد الطلبات الواردة بعد الساعة الرابعة عصرًا في يوم العمل التالي.</li>
+            </ul>
+
+            <h2>3. تتبع الطلب</h2>
+            <p>بعد تأكيد طلبك وشحنه، سنرسل لك رسالة نصية أو بريدًا إلكترونيًا يحتوي على:</p>
+            <ul>
+                <li>رقم تتبع الشحنة.</li>
+                <li>رابط مباشر لتتبع حالة طلبك عبر موقع شركة الشحن.</li>
+            </ul>
+
+            <h2>4. استلام الطلب</h2>
+            <ul>
+                <li>يجب على العميل أو من ينوب عنه تقديم إثبات هوية عند استلام الطلبات التي تحتوي على أدوية خاصة أو طلبات ذات قيمة عالية.</li>
+                <li>في حال تعذر استلام الطلب، سيتم محاولة التوصيل مرة أخرى. بعد المحاولة الثانية، قد يتم إلغاء الطلب وتحميل العميل رسوم الشحن.</li>
+            </ul>
+            
+        </div>
+    </section>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/items_home.js" defer></script> 
+</body>
+</html>

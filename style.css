@@ -68,6 +68,8 @@ img {
 }
 
 .header-links-button {
+    display: flex;
+    align-items: center;
     background-color: #0b12e5;
     color: white;
     border-radius: 15px;
@@ -77,12 +79,19 @@ img {
     cursor: pointer;
     position: relative;
     transition: 0.3s;
+    gap: 10px;
 }
 
 .header-links-button:hover {
     scale: none;
     background-color: aqua;
     color: black;
+}
+
+.header-icons > div:last-child,#authButtons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .header-icons {
@@ -1103,6 +1112,95 @@ footer .bottom_footer .payment_img {
 
 
 
+
+/* ================================================= */
+/* Profile Dropdown Styling */
+/* ================================================= */
+
+.profile-dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* تعديل زر الأيقونة ليكون متناسقاً مع التصميم الجديد */
+.profile-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* الحفاظ على ستايل header-links-button */
+}
+
+.user-name-header {
+    /* يمكنك إخفاء الاسم في الشاشات الصغيرة لوفر المساحة */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* القائمة المنسدلة نفسها */
+.profile-dropdown-menu {
+    display: none; /* مخفية افتراضياً */
+    position: absolute;
+    top: 100%; /* تظهر أسفل الزر مباشرة */
+    right: 0;
+    min-width: 200px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 900; /* لتكون فوق محتوى الصفحة */
+    margin-top: 10px;
+}
+
+/* إظهار القائمة عند تفعيلها بالـ JS */
+.profile-dropdown-menu.show {
+    display: block;
+}
+
+.profile-dropdown-menu a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    transition: background-color 0.2s;
+}
+
+.profile-dropdown-menu a i {
+    margin-right: 8px;
+    color: var(--main-color); /* لون الأيقونات */
+}
+
+.profile-dropdown-menu a:hover {
+    background-color: #f1f1f1;
+    color: var(--btn-color);
+}
+
+
+/* تنسيق أساسي لضمان ظهور الأيقونة والرقم على نفس السطر */
+.phone-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none; /* لإزالة خط التسطير */
+    color: inherit; /* للحفاظ على لون النص */
+}
+
+/* إخفاء رقم الهاتف افتراضياً */
+.phone-link .phone-number-text {
+    /* الخصائص المستخدمة للإخفاء بدون شغل مساحة */
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-width 0.3s ease-in-out, opacity 0.3s ease-in-out, margin-right 0.3s ease-in-out;
+    white-space: nowrap; /* يمنع نزول النص لسطر جديد */
+}
+
+/* إظهار رقم الهاتف عند المرور فوق الرابط (Hover) أو التركيز عليه (Focus) */
+.phone-link:hover .phone-number-text,
+.phone-link:focus .phone-number-text {
+    max-width: 200px; /* قيمة كافية لعرض الرقم */
+    opacity: 1;
+    margin-right: 10px; /* إضافة مسافة بين الأيقونة والرقم */
+}
 
 
 /*start responsive */

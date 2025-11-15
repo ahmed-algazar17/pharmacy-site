@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <title>سياسة الإرجاع والاستبدال | صيدلية د/ إسراء الألفي</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo2.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        /* ============================================== */
+        /* تنسيقات خاصة لصفحة سياسة الإرجاع (Returns) */
+        /* ============================================== */
+        .returns-page {
+            padding: 50px 0 80px 0;
+            min-height: 70vh;
+            text-align: right; /* لضمان محاذاة النص العربي */
+        }
+        .returns-page .container {
+            max-width: 900px;
+        }
+        .returns-page h1 {
+            color: var(--btn-color);
+            border-bottom: 3px solid var(--main-color);
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .returns-page h2 {
+            color: var(--main-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-right: 10px;
+            border-right: 4px solid var(--btn-color);
+            font-size: 24px;
+        }
+        .returns-page p, .returns-page ul, .returns-page ol { /* إضافة ol للتنظيم */
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .returns-page ul, .returns-page ol {
+            list-style: disc; /* استخدام الأرقام لـ ol */
+            margin-right: 25px;
+            padding-right: 0;
+        }
+        .returns-page ul li, .returns-page ol li {
+            margin-bottom: 10px;
+        }
+        .returns-page ol {
+            list-style: decimal;
+        }
+        .contact-info {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 8px;
+            border-right: 5px solid var(--btn-color);
+            margin-top: 30px;
+        }
+        .contact-info strong {
+            color: var(--btn-color);
+        }
+        .header{
+            flex-direction: row-reverse;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div> <img class="logo" src="images/file_00000000d7d861f48d124e8eb4435ce9.png" /></div>
+        <div class="header-middle-section">
+            <h1 style="color: white; font-size:50px; margin-bottom: 30px;">DR / ESRAA EL-ALFY PHARAMACY</h1>
+            <span style="font-size: 25px;">WELCOME TO OUR PHARAMACY</span>
+            <h3>YOUR BEST MEDICAL CONSULT</h3>
+        </div>
+        <div class="header-icons">
+            <div class="icon-box">
+                <a href="index.html">
+                    <i class="fa-solid fa-house fa-2xl"></i>
+                </a>
+            </div>
+            <div onclick="open_close_favorite()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-heart fa-2xl"></i>
+                    <span class="count count-header-favorite">0</span>
+                </a>
+            </div>
+            <div onclick="open_close_cart()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                    <span class="count count-item-header">0</span>
+                </a>
+            </div>
+            <div id="authButtons">
+            </div>
+        </div>
+    </div>
+    
+    <div class="cart">
+        <div class="top_cart">
+            <h3>Cart Items : <span class="Count_item_cart">0</span></h3>
+            <span onclick="open_close_cart()" class="close_cart"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_cart" id="cart_items">
+        </div>
+        <div class="bottom_cart">
+            <div class="total">
+                <p>subtotal</p>
+                <p class="price_cart_total">50EG</p>
+            </div>
+            <div class="bottom_cart">
+                <a href="#" class="btn_cart btn">Checkout</a>
+                <span onclick="open_close_cart()" class="btn_cart trans_bg btn">Shop More</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="favorite">
+        <div class="top_favorite">
+            <h3>Favorite Items : <span class="Count_item_favorite">0</span></h3>
+            <span onclick="open_close_favorite()" class="close_favorite"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_favorite" id="favorite_items">
+        </div>
+    </div>
+
+    <section class="returns-page">
+        <div class="container">
+            <h1><i class="fa-solid fa-rotate-left"></i> سياسة الإرجاع والاستبدال</h1>
+
+            <h2>1. شروط الإرجاع العامة</h2>
+            <p>نحن في صيدلية د/ إسراء الألفي نسعى لضمان رضائكم التام عن مشترياتكم. يرجى مراجعة الشروط التالية قبل طلب الإرجاع أو الاستبدال:</p>
+            <ul>
+                <li>يجب أن يكون المنتج في حالته الأصلية، غير مستخدم، وبغلافه الأصلي وجميع الملصقات والبطاقات المرفقة.</li>
+                <li>يجب تقديم فاتورة الشراء الأصلية أو إثبات الدفع.</li>
+                <li>يجب أن يتم طلب الإرجاع أو الاستبدال خلال **(7) أيام** من تاريخ استلام الطلب.</li>
+            </ul>
+
+            <h2>2. المنتجات التي لا يمكن إرجاعها</h2>
+            <p>لا يمكن إرجاع المنتجات التالية لأسباب تتعلق بالصحة العامة والسلامة:</p>
+            <ul>
+                <li>الأدوية التي تستلزم وصفة طبية (ما لم يكن هناك خطأ في الصرف من جانب الصيدلية).</li>
+                <li>الأطعمة والمكملات الغذائية بعد فتح الغلاف.</li>
+                <li>مستحضرات التجميل ومنتجات العناية الشخصية التي تم فتحها أو استخدامها.</li>
+                <li>المنتجات التي تم نزع ملصقها أو التي تم تخزينها بشكل غير سليم من قبل العميل (مثل الأدوية التي تتطلب تبريد).</li>
+            </ul>
+
+            <h2>3. إجراءات الإرجاع والاستبدال</h2>
+            <p>لإتمام عملية الإرجاع أو الاستبدال، يرجى اتباع الخطوات التالية:</p>
+            <ol>
+                <li>التواصل مع فريق خدمة العملاء عبر الهاتف أو البريد الإلكتروني خلال الفترة المحددة.</li>
+                <li>تزويدنا برقم الطلب وتفاصيل المنتج المراد إرجاعه والسبب.</li>
+                <li>سيتم إرسال مندوب لاستلام المنتج بعد تأكيد الموافقة على طلب الإرجاع.</li>
+                <li>بعد فحص المنتج والتحقق من حالته، يتم معالجة طلب استرداد المبلغ أو الاستبدال.</li>
+            </ol>
+
+            <h2>4. استرداد المبلغ</h2>
+            <ul>
+                <li>يتم استرداد المبلغ خلال **7 إلى 14 يوم عمل** من تاريخ الموافقة على طلب الإرجاع.</li>
+                <li>إذا تم الدفع نقدًا، يتم استرداد المبلغ نقدًا أو عبر تحويل بنكي.</li>
+                <li>إذا تم الدفع بالبطاقة الائتمانية، يتم إعادة المبلغ إلى نفس البطاقة.</li>
+            </ul>
+
+            <div class="contact-info">
+                <strong>لأي استفسارات بخصوص سياسة الإرجاع:</strong>
+                <p>يرجى التواصل معنا عبر:</p>
+                <p><i class="fa-solid fa-envelope"></i> البريد الإلكتروني: support@esraa-pharmacy.com</p>
+                <p><i class="fa-solid fa-phone"></i> الهاتف: +20 1028491544</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/items_home.js" defer></script> 
+</body>
+</html>

@@ -10,12 +10,117 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="about.css">
 
 
 </head>
 
 <body>
+
+    <style>
+    .about {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about h1 {
+    color: #00bfff;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.about .intro {
+    width: 80%;
+    margin: 0 auto 40px;
+    color: #444;
+    line-height: 1.7;
+}
+.about .intro strong{
+    color: black;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.about-content .text {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+}
+
+.about-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: fit-content;
+    text-align: left;
+
+}
+.about-content h2{
+    color: #00bfff;
+    text-align: center;
+}
+.about-content p{
+    text-align: center;
+}
+.about-content li {
+    margin: 8px 0;
+    color: #333;
+}
+
+.about-content i {
+    color: #00bfff;
+    margin-right: 8px;
+}
+
+.team {
+    background: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+.team h2{
+    color: #00bfff;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.team .member {
+    width: 200px;
+}
+
+.team .member img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.team .member h3 {
+    color: #00bfff;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.team .member p {
+    font-size: 0.9em;
+    color: #777;
+}
+
+
+    </style>
 
     <div class="cart">
         <div class="top_cart">
@@ -80,9 +185,7 @@
                     <span class="count count-item-header">0</span>
                 </a>
             </div>
-            <div>
-                <button class="header-links-button">Log in <i class="fa-solid fa-right-to-bracket"></i></button>
-                <button class="header-links-button">sign up <i class="fa-solid fa-user-plus"></i></button>
+            <div id="authButtons">
             </div>
         </div>
     </div>
@@ -143,6 +246,12 @@
                     <p>Pulmonolgist/Intensivist at Mansoura Chest Hospital</p>
                 </div>
                 <div class="member">
+                    <img src="images/physiotherapist-and-patien_16358324.png"
+                        alt="">
+                    <h3>Dr / Rana Al-ahmady</h3>
+                    <p>physical Therapist&Pharmacist-assistant</p>
+                </div>
+                <div class="member">
                     <img src="images/phamacisist_assis..webp"
                         alt="">
                     <h3>Mr / Ahmed Mohsen</h3>
@@ -161,13 +270,16 @@
                 <p>Healing is from Allah, care is from us — DR / ESRAA ELALFY PHARMACY © 2025</p>
 
                 <div class="icons_footer">
-                    <a href="#"><i class="fa-solid fa-phone"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-
-
-                </div>
+                <a href="tel:+201028491544" class="phone-link">
+                         <i class="fa-solid fa-phone"></i>
+                         <span class="phone-number-text">+20 1028491544</span>
+                </a>
+                <a href="https://www.facebook.com/share/1FxM9NJsQE/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                
+                <a href="https://wa.me/201028491544" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                
+                <a href="https://www.instagram.com/EsraaElAlfyPharmacy" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
             </div>
         </div>
 

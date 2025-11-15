@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
+    
+</head>
+
+<body>
+
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -90,9 +95,7 @@
             text-decoration: underline;
         }
     </style>
-</head>
 
-<body>
     <div class="login-container">
         <img src="images/file_00000000d7d861f48d124e8eb4435ce9.png" alt="Pharmacy Logo">
         <h2>Welcome Back</h2>
@@ -117,17 +120,34 @@
         </form>
     </div>
 
-    <script>
+   <script>
     document.getElementById("loginForm").addEventListener("submit", function(e) {
-        e.preventDefault(); // يمنع إرسال الفورم
+        e.preventDefault();
+        
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        
+        // 1. الحصول على بيانات المستخدم المسجل 
+        const registeredUser = JSON.parse(localStorage.getItem("user"));
 
-        // يظهر تنبيه بسيط
-        alert("✅ تم تسجيل الدخول بنجاح!");
+        if (!registeredUser) {
+            alert("❌ خطأ: لا يوجد حساب مسجل. يرجى إنشاء حساب أولاً.");
+            return;
+        }
 
-        // بعد ثانية واحدة ينتقل للصفحة الرئيسية
-        setTimeout(() => {
-            window.location.href = "index.html";
-        }, 1000);
+        // 2. المطابقة
+        if (registeredUser.email === email && registeredUser.password === password) {
+            // تسجيل الدخول بنجاح
+            localStorage.setItem("isLoggedIn", "true"); // وضع علامة لتسجيل حالة الدخول
+            alert("✅ تم تسجيل الدخول بنجاح!");
+            
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 1000);
+        } else {
+            // فشل تسجيل الدخول
+            alert("❌ خطأ: البريد الإلكتروني أو كلمة المرور غير صحيحة.");
+        }
     });
 </script>
 

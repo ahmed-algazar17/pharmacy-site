@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <title>الأسئلة الشائعة | صيدلية د/ إسراء الألفي</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo2.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        /* ============================================== */
+        /* تنسيقات خاصة لصفحة الأسئلة الشائعة (FAQ) */
+        /* ============================================== */
+        .faq-page {
+            padding: 50px 0 80px 0;
+            min-height: 70vh;
+            text-align: right; 
+        }
+        .faq-page .container {
+            max-width: 900px;
+        }
+        .faq-page h1 {
+            color: var(--btn-color); 
+            border-bottom: 3px solid var(--main-color); 
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .faq-page h2 {
+            color: var(--main-color);
+            margin-top: 30px;
+            margin-bottom: 25px;
+            padding-right: 10px;
+            border-right: 4px solid var(--btn-color);
+            font-size: 24px;
+        }
+        
+        /* ------------------- Accordion Styles ------------------- */
+        .faq-item {
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden; /* لإخفاء المحتوى الزائد */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            background-color: #f9f9f9;
+            color: var(--btn-color);
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+
+        .faq-question i {
+            margin-left: 10px;
+            transition: transform 0.3s;
+        }
+        
+        /* تدوير الأيقونة عند فتح الإجابة */
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            background-color: #fff;
+        }
+        
+        /* تنسيق الفقرة داخل الإجابة */
+        .faq-answer p {
+            padding: 15px 0;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        /* عند تفعيل الإجابة بواسطة JS */
+        .faq-answer.show {
+            max-height: 500px; /* قيمة كبيرة بما يكفي لاستيعاب النص */
+            padding: 0 20px 15px 20px;
+        }
+        /* ------------------- End Accordion Styles ------------------- */
+
+        /* تعديل خاص للهيدر لضمان الترتيب الصحيح في هذه الصفحة */
+        .header {
+            flex-direction: row-reverse; 
+        }
+        
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+        <div> <img class="logo" src="images/file_00000000d7d861f48d124e8eb4435ce9.png" /></div>
+        <div class="header-middle-section">
+            <h1 style="color: white; font-size:50px; margin-bottom: 30px;">DR / ESRAA EL-ALFY PHARAMACY</h1>
+            <span style="font-size: 25px;">WELCOME TO OUR PHARAMACY</span>
+            <h3>YOUR BEST MEDICAL CONSULT</h3>
+        </div>
+        <div class="header-icons">
+            <div class="icon-box">
+                <a href="index.html">
+                    <i class="fa-solid fa-house fa-2xl"></i>
+                </a>
+            </div>
+            <div onclick="open_close_favorite()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-heart fa-2xl"></i>
+                    <span class="count count-header-favorite">0</span>
+                </a>
+            </div>
+            <div onclick="open_close_cart()" class="icon-box">
+                <a>
+                    <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                    <span class="count count-item-header">0</span>
+                </a>
+            </div>
+            <div id="authButtons">
+            </div>
+        </div>
+    </div>
+    
+    <div class="cart">
+        <div class="top_cart">
+            <h3>Cart Items : <span class="Count_item_cart">0</span></h3>
+            <span onclick="open_close_cart()" class="close_cart"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_cart" id="cart_items">
+        </div>
+        <div class="bottom_cart">
+            <div class="total">
+                <p>subtotal</p>
+                <p class="price_cart_total">50EG</p>
+            </div>
+            <div class="bottom_cart">
+                <a href="#" class="btn_cart btn">Checkout</a>
+                <span onclick="open_close_cart()" class="btn_cart trans_bg btn">Shop More</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="favorite">
+        <div class="top_favorite">
+            <h3>Favorite Items : <span class="Count_item_favorite">0</span></h3>
+            <span onclick="open_close_favorite()" class="close_favorite"> <i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+        <div class="items_in_favorite" id="favorite_items">
+        </div>
+    </div>
+
+    <section class="faq-page">
+        <div class="container">
+            <h1><i class="fa-solid fa-circle-question"></i> الأسئلة الشائعة</h1>
+
+            <h2>الطلبات والحساب</h2>
+            <div class="faq-section">
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        كيف يمكنني إنشاء حساب جديد؟
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>لإنشاء حساب، يرجى النقر على زر "Sign up" في أعلى يمين الصفحة، ثم قم بملء البيانات المطلوبة مثل الاسم، البريد الإلكتروني، وكلمة المرور.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        كيف أستطيع تعديل بياناتي الشخصية؟
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يمكنك تعديل بياناتك الشخصية (مثل الاسم ورقم الهاتف) بالذهاب إلى أيقونة الملف الشخصي في الهيدر، ثم اختيار "My Profile" من القائمة المنسدلة.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        هل يمكنني إلغاء أو تعديل طلبي بعد تأكيده؟
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، يمكنك الإلغاء أو التعديل طالما لم يتم شحن الطلب. يرجى التواصل فوراً مع خدمة العملاء عبر الهاتف أو الواتساب لطلب التعديل.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <h2>الدفع والأمان</h2>
+            <div class="faq-section">
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        ما هي طرق الدفع المتاحة؟
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نوفر حالياً خيار الدفع عند الاستلام (Cash on Delivery). نعمل على إضافة خيارات الدفع الإلكتروني (البطاقات الائتمانية والخصم) قريباً.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        هل الدفع عبر الموقع آمن؟
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، جميع معاملات الدفع تتم عبر بوابات دفع آمنة مشفرة (عند تفعيل الدفع الإلكتروني). ونحن لا نقوم بتخزين بيانات بطاقتك الائتمانية.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <h2>الشحن والإرجاع</h2>
+            <div class="faq-section">
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        ما هي تكلفة الشحن ومدة التوصيل؟
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>تختلف تكلفة الشحن ومدة التوصيل حسب المنطقة. يمكنك مراجعة التفاصيل كاملة في صفحة <a href="shipping.html">سياسة الشحن والتوصيل</a>.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        هل يمكن إرجاع الأدوية بعد فتحها؟
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>لا يمكن إرجاع الأدوية التي تم فتحها، ومنتجات العناية الشخصية لأسباب صحية. يرجى مراجعة <a href="returns.html">سياسة الإرجاع والاستبدال</a> لمعرفة المنتجات المستثناة.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/items_home.js" defer></script> 
+    
+    <script>
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            // إغلاق أي إجابة أخرى مفتوحة
+            document.querySelectorAll('.faq-question.active').forEach(activeQuestion => {
+                if (activeQuestion !== element) {
+                    activeQuestion.classList.remove('active');
+                    activeQuestion.nextElementSibling.classList.remove('show');
+                }
+            });
+            
+            // تبديل حالة الإجابة الحالية
+            element.classList.toggle('active');
+            answer.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

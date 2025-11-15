@@ -237,3 +237,104 @@ updatefavorite()
 
 /* end search */
 
+/*start log in */
+
+// ===================================================
+// 1. دوال القائمة المنسدلة للملف الشخصي
+// ===================================================
+
+// دالة فتح/إغلاق القائمة المنسدلة
+function toggleProfileDropdown(event) {
+    event.preventDefault();
+    event.stopPropagation(); // منع إغلاق القائمة فوراً
+    const menu = document.getElementById('profileDropdownMenu');
+    if (menu) {
+        menu.classList.toggle('show');
+    }
+}
+
+// دالة إغلاق القائمة عند النقر خارجها
+document.addEventListener('click', function(e) {
+    const menu = document.getElementById('profileDropdownMenu');
+    const toggle = document.querySelector('.profile-toggle');
+    
+    // تأكد من وجود العناصر قبل المعالجة
+    if (menu && toggle) {
+        // إذا كان النقر ليس داخل القائمة وليس على زر التبديل، أغلق القائمة
+        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+            menu.classList.remove('show');
+        }
+    }
+});
+
+
+// ===================================================
+// 2. دالة التحقق من الدخول وتحديث الـ Header
+// ===================================================
+
+function checkLoginStatus() {
+    const authButtons = document.getElementById("authButtons");
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    const user = JSON.parse(localStorage.getItem("user"));
+    
+    // التحقق من وجود الحاوية (مهم في كل الصفحات)
+    if (!authButtons) return;
+
+    if (isLoggedIn && user) {
+        // 🚀 التعديل: عرض أيقونة الملف الشخصي مع قائمة منسدلة
+        const userName = user.username.split(' ')[0];
+        
+        authButtons.innerHTML = `
+            <div class="profile-dropdown-container">
+                <a href="#" class="header-links-button profile-toggle" onclick="toggleProfileDropdown(event)">
+                    <span class="user-name-header">Welcome, ${userName}!</span>
+                    <i class="fa-solid fa-user-circle fa-xl"></i>
+                </a>
+                
+                <div class="profile-dropdown-menu" id="profileDropdownMenu">
+                    <a href="account.html#profile"><i class="fa-solid fa-address-card"></i> My Profile</a>
+                    <a href="account.html#orders"><i class="fa-solid fa-box-open"></i> My Orders</a>
+                    <a href="#" onclick="handleLogout(event)"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+                </div>
+            </div>
+        `;
+    } else {
+        // المستخدم غير مسجل دخوله: عرض أزرار الدخول والتسجيل
+        authButtons.innerHTML = `
+            <a href="login.html" class="header-links-button">
+                Log in <i class="fa-solid fa-right-to-bracket"></i>
+            </a>
+            <a href="signup.html" class="header-links-button">
+                Sign up <i class="fa-solid fa-user-plus"></i>
+            </a>
+        `;
+    }
+}
+
+// ===================================================
+// 3. دالة تسجيل الخروج (handleLogout)
+// ===================================================
+
+function handleLogout(event) {
+    event.preventDefault();
+    
+    // 1. إزالة علامة تسجيل الدخول
+    localStorage.removeItem("isLoggedIn");
+    
+    // 2. توجيه المستخدم لصفحة الـ Index (الرئيسية)
+    // هذا سيؤدي إلى إعادة تحميل الصفحة تلقائيًا وتحديث الـ Header
+    window.location.href = "index.html";
+    
+    // (إزالة alert() للحصول على تجربة مستخدم أنظف)
+    // alert("You have been logged out successfully.");
+}
+
+
+// ===================================================
+// 4. التنفيذ عند تحميل الصفحة
+// ===================================================
+document.addEventListener("DOMContentLoaded", checkLoginStatus);
+
+// ملاحظة: تأكد من إضافة ستايلات profile-dropdown-container و profile-dropdown-menu إلى ملف style.css ليعمل التصميم بشكل صحيح.
+
+/*end log in */
